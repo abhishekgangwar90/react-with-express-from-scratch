@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => {
   return merge([
@@ -16,7 +17,13 @@ module.exports = () => {
           {
             test: /\.scss$/,
             exclude: /node_modules/,
-            use: ['style-loader', 'css-loader', 'sass-loader'],
+            use: [
+              process.env.NODE_ENV === 'production'
+                ? MiniCssExtractPlugin.loader
+                : 'style-loader',
+              'css-loader',
+              'sass-loader',
+            ],
           },
         ],
       },

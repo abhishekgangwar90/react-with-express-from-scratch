@@ -28,7 +28,7 @@ const prodConfig = () => {
       },
       plugins: [
         new OptimizeCssAssetsPlugin(),
-        new VisualizerPlugin({ filename: './statistics.html' }),
+        new VisualizerPlugin({ filename: './statistics/statistics.html' }),
         new webpack.DefinePlugin({
           isDevelopment: false,
           'process.env': {
