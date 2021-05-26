@@ -1,0 +1,6 @@
+{
+  "singleQuote": true, // use single quote only
+  "printWidth": 100, // line width is 100 chars
+  "trailingComma": "es5", // add comma at the end of every line
+  "tabWidth": 2 // tab width
+}
