@@ -4,7 +4,9 @@
   "description": "'A React app from scratch'",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development"
+    "start": "set NODE_ENV=development && webpack serve --mode development --config webpack/webpack.base.config.js --open --hot --history-api-fallback",
+    "pre-build": "webpack --mode production --config config/webpack.prod.config.js --env.PLATFORM=production --env.VERSION=stag --progress",
+    "build": "node server"
   },
   "author": "",
   "license": "ISC",
