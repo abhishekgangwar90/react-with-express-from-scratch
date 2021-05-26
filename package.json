@@ -4,8 +4,8 @@
   "description": "'A React app from scratch'",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=development && webpack serve --mode development --config webpack/webpack.base.config.js --open --hot --history-api-fallback",
-    "pre-build": "webpack --mode production --config config/webpack.prod.config.js --env.PLATFORM=production --env.VERSION=stag --progress",
+    "start": "webpack serve --mode development --config webpack/webpack.dev.config.js --open --hot --history-api-fallback",
+    "pre-build": "webpack server --mode production --config webpack/webpack.prod.config.js --progress",
     "build": "node server"
   },
   "author": "",
@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
+    "compression-webpack-plugin": "^8.0.0",
     "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
     "eslint": "^7.27.0",
@@ -42,7 +43,7 @@
     "prettier": "^2.3.0",
     "sass-loader": "^11.1.1",
     "style-loader": "^2.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
+    "terser-webpack-plugin": "^5.1.2",
     "webpack": "^5.37.1",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2",
