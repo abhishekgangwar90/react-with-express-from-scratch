@@ -6,11 +6,12 @@
   "scripts": {
     "start": "set NODE_ENV=development && webpack serve --config webpack/webpack.dev.config.js --open --hot --history-api-fallback",
     "pre-build": "rm -rf dist && set NODE_ENV=production && webpack --config webpack/webpack.prod.config.js",
-    "build": "node server"
+    "build": "node server/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
