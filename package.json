@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "set NODE_ENV=development && webpack serve --config webpack/webpack.dev.config.js --open --hot --history-api-fallback",
-    "pre-build": "set NODE_ENV=production && webpack --config webpack/webpack.prod.config.js --progress",
+    "pre-build": "rm -rf dist && set NODE_ENV=production && webpack --config webpack/webpack.prod.config.js",
     "build": "node server"
   },
   "author": "",

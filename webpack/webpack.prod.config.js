@@ -3,8 +3,8 @@ const { merge } = require('webpack-merge');
 
 // plugins
 const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const VisualizerPlugin = require('webpack-visualizer-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const webpackBaseConfig = require('./webpack.base.config');
@@ -27,8 +27,9 @@ const prodConfig = () => {
         minimizer: [new TerserPlugin()],
       },
       plugins: [
+        new MiniCssExtractPlugin(),
         new OptimizeCssAssetsPlugin(),
-        new VisualizerPlugin({ filename: './statistics/statistics.html' }),
+        // new Visualizer({ filename: './statistics/statistics.html' }),
         new webpack.DefinePlugin({
           isDevelopment: false,
           'process.env': {
